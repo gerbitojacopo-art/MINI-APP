@@ -15,4 +15,13 @@ if (tg.initDataUnsafe && tg.initDataUnsafe.user) {
 // Gestione del pulsante per chiudere l'app
 document.getElementById('close-btn').addEventListener('click', () => {
   tg.close();
+});const tg = window.Telegram.WebApp;
+
+// Configura il pulsante nativo principale in basso
+tg.MainButton.setText("CONFERMA OPERAZIONE");
+tg.MainButton.show();
+
+// Gestisci il click sul pulsante nativo
+tg.MainButton.onClick(() => {
+  tg.showAlert("Hai cliccato il pulsante nativo!");
 });
